@@ -20,6 +20,7 @@ Route::group([
     'middleware' => ['auth'],
 ], function() {
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+    Route::resource('/category', 'CategoryController', ['as' => 'admin']);
 });
 
 Route::get('/', function() {
